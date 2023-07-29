@@ -1,3 +1,3 @@
-import BasicPage from '../components/BasicPage'
+import AboutPage from '../components/AboutPage'
 
-export const About = () => <BasicPage title='ABOUT' description='¿QUIENES SOMOS?' />
+export const About = () => <AboutPage title='ABOUT' description='¿QUIENES SOMOS?' />

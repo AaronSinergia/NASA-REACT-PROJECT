@@ -1,0 +1,13 @@
+import React from 'react'
+
+export const SelectApi = () => {
+  return (
+    <>
+        <h2>Choose your API</h2>
+        <select name="Choose your API" id="choose_api">
+            <option value="APOD">APOD</option>
+            <option value="MARS ROVERS">MARS ROVERS</option>
+        </select>
+    </>
+  )
+}

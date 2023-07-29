@@ -4,3 +4,46 @@
   padding: 2rem;
   text-align: center;
 }
+
+body {
+  background-color: black;
+  color: rgb(231, 222, 222);
+}
+
+.content {
+  border: 5px solid grey;
+}
+
+.title {
+  margin-top: 15px;
+}
+
+.app_bar {
+  margin-top: 30px;
+}
+
+.navbar a {
+  padding: 10px;
+}
+
+.description {
+  margin-top: 30px;
+}
+
+.api_info img {
+  width: 70%;
+}
+
+.api_info p {
+  font-size: 10px;
+  padding: 10px;
+}
+
+.current_date {
+  margin-top: 15px;
+  font-size: 10px;
+}
+
+.footer p {
+  font-size: 10px;
+}

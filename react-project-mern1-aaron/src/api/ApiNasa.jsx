@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { today } from '../components/CurrentDate';
 
-const ApiNasa = () => {
-  const [apiInfo, setApiInfo] = useState(null);
+export const ApiNasa = ({apiInfo, setApiInfo}) => {
 
   useEffect(() => {
     const NASA_URL = "https://api.nasa.gov/";
@@ -30,6 +29,7 @@ const ApiNasa = () => {
         <div>
           <p>{apiInfo.title}</p>
           <img src={apiInfo.url} alt={apiInfo.title} />
+          <p className='pic_day'>Image Dated: {apiInfo.date}</p>
           <p>{apiInfo.explanation}</p>
         </div>
       )}
