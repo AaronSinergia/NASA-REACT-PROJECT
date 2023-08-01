@@ -4,9 +4,9 @@ import { today } from '../components/CurrentDate';
 export const ApiNasa = ({apiInfo, setApiInfo}) => {
 
   useEffect(() => {
-    const NASA_URL = "https://api.nasa.gov/";
+    const NASA_API = "https://api.nasa.gov/";
     const NASA_API_KEY = "Cv26rEXaDRpS2GDm5J2E2qYKXpGWT7O4Tn6YchRu";
-    const url = `${NASA_URL}planetary/apod?date=${today}&api_key=${NASA_API_KEY}`;
+    const url = `${NASA_API}planetary/apod?date=${today}&api_key=${NASA_API_KEY}`;
 
     fetch(url)
       .then(response => {
@@ -26,11 +26,11 @@ export const ApiNasa = ({apiInfo, setApiInfo}) => {
   return (
     <>
       {apiInfo && (
-        <div>
-          <p>{apiInfo.title}</p>
-          <img src={apiInfo.url} alt={apiInfo.title} />
+        <div class='div_content'>
+          <p className='second_title'>{apiInfo.title}</p>
+          <img className="api_img" src={apiInfo.url} alt={apiInfo.title} />
           <p className='pic_day'>Image Dated: {apiInfo.date}</p>
-          <p>{apiInfo.explanation}</p>
+          <p className='api_info'>{apiInfo.explanation}</p>
         </div>
       )}
     </>

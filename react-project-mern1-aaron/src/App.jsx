@@ -1,16 +1,22 @@
-import {Routes, Route} from 'react-router-dom'
+import {NavLink, Outlet} from 'react-router-dom'
 import './App.css'
 
-import {Home} from './pages/Home'
-import {About} from './pages/About'
 
 function App() {
 
   return (
-    <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/about' element={<About/>}/>
-    </Routes>
+      <div className="content">
+        <div className='app_bar'>
+          <nav className='navbar'>
+            <NavLink to="">HOME</NavLink>
+            <NavLink to="/about">ABOUT</NavLink>
+          </nav>
+        </div>
+        <main className='outlet'>
+          <Outlet />
+        </main>
+        <footer className='footer'>© Created by Aaron Carrasco for RockTheCode</footer>
+      </div>
   )
 }
 

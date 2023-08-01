@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -10,40 +10,58 @@ body {
   color: rgb(231, 222, 222);
 }
 
-.content {
-  border: 5px solid grey;
-}
-
-.title {
-  margin-top: 15px;
-}
-
-.app_bar {
-  margin-top: 30px;
+nav {
+  margin-top: 19px;
 }
 
 .navbar a {
-  padding: 10px;
+  padding: 0 30px;
 }
 
-.description {
-  margin-top: 30px;
+.title {
+  margin-top: 10px;
 }
 
-.api_info img {
+h2 {
+  font-size: 16px;
+  color: rgb(170, 157, 157);
+}
+
+.second_title {
+  font-size: 20px;
+  color: rgb(217, 124, 124);
+  font-style: italic;
+}
+
+.pic_day {
+  font-size: 10px;
+  margin: 0;
+}
+
+.api_info {
+  font-size: 10px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.api_img {
   width: 70%;
 }
 
-.api_info p {
-  font-size: 10px;
-  padding: 10px;
+.api_img_rover {
+  width: 70%;
+}
+
+.set_data {
+  margin-top: 10px;
 }
 
 .current_date {
   margin-top: 15px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
-.footer p {
-  font-size: 10px;
+.footer {
+  margin-top: 15px;
+  font-size: 9px;
 }
