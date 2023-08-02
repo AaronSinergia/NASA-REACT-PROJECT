@@ -6,16 +6,16 @@ function App() {
 
   return (
       <div className="content">
-        <div className='app_bar'>
-          <nav className='navbar'>
+        <div className="app_bar">
+          <nav className="navbar">
             <NavLink to="">HOME</NavLink>
             <NavLink to="/about">ABOUT</NavLink>
           </nav>
         </div>
-        <main className='outlet'>
+        <main className="outlet">
           <Outlet />
         </main>
-        <footer className='footer'>© Created by Aaron Carrasco for RockTheCode</footer>
+        <footer className="footer">© Created by Aaron Carrasco for RockTheCode</footer>
       </div>
   )
 }

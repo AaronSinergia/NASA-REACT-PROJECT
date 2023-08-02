@@ -5,9 +5,9 @@ export const ApiMars = ({apiInfo, setApiInfo}) => {
   useEffect(() => {
     const NASA_API = "https://api.nasa.gov/";
     const NASA_API_KEY = "Cv26rEXaDRpS2GDm5J2E2qYKXpGWT7O4Tn6YchRu";
-    const url = `${NASA_API}mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${NASA_API_KEY}`;
+    const MARS_URL = `${NASA_API}mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${NASA_API_KEY}`;
 
-    fetch(url)
+    fetch(MARS_URL)
       .then(response => {
         if (!response.ok) {
           throw new Error('La consulta realizada no es válida');
@@ -29,7 +29,7 @@ export const ApiMars = ({apiInfo, setApiInfo}) => {
       // Pero ahora ya entiendo, que al ser un array de objetos debo indicar por cual empezar
       // y en caso de que no exista ni una sola imagen, que no se cargue entonces la info
       // Esto que explico es así?? confirmar profes porfa.
-       (<div class='div_content'>
+       (<div className='div_content'>
           <p className='second_title'>{apiInfo.photos[0].camera.full_name}</p>
           <img className="api_img_rover" src={apiInfo.photos[0].img_src} alt={apiInfo.photos[0].camera.full_name} />
           <p className='pic_day'>Image Dated: {apiInfo.photos[0].earth_date}</p>
