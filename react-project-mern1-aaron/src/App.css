@@ -65,3 +65,34 @@ h2 {
   margin-top: 15px;
   font-size: 9px;
 }
+
+@media screen and (min-width: 800px) and (max-width: 2080px) {
+  .div_content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid grey;
+    margin-top: 10px;
+  }
+
+  .second_title {
+    font-size: 20px;
+    color: rgb(217, 124, 124);
+    font-style: italic;
+    padding: 10px;
+  }
+
+  .api_img {
+    width: 50%;
+  }
+
+  .api_info {
+    font-size: 12px;
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .api_img_rover {
+    width: 50%;
+  }
+}
