@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-export const ApiMars = ({apiInfo, setApiInfo}) => {
+export const ApiMars = ({marsData, setMarsData}) => {
 
   useEffect(() => {
     const NASA_API = "https://api.nasa.gov/";
@@ -15,7 +15,7 @@ export const ApiMars = ({apiInfo, setApiInfo}) => {
         return response.json();
       })
       .then(data => {
-        setApiInfo(data); // Guardar la información en el estado
+        setMarsData(data); // Guardar la información en el estado
       })
       .catch(error => {
         console.error('Fetch error:', error);
@@ -23,17 +23,17 @@ export const ApiMars = ({apiInfo, setApiInfo}) => {
   }, []);
   return (
     <>
-      {apiInfo  && apiInfo.photos && apiInfo.photos.length > 0 &&
+      {marsData  && marsData.photos && marsData.photos.length > 0 &&
       // Esta parte de arriba, sólo esta, la he sacado con ayuda de ChatGPT
       // me estaba volviendo loco para saber que ocurría.
       // Pero ahora ya entiendo, que al ser un array de objetos debo indicar por cual empezar
       // y en caso de que no exista ni una sola imagen, que no se cargue entonces la info
       // Esto que explico es así?? confirmar profes porfa.
        (<div className='div_content'>
-          <p className='second_title'>{apiInfo.photos[0].camera.full_name}</p>
-          <img className="api_img_rover" src={apiInfo.photos[0].img_src} alt={apiInfo.photos[0].camera.full_name} />
-          <p className='pic_day'>Image Dated: {apiInfo.photos[0].earth_date}</p>
-          <p className='api_info'>Status of Rover: {apiInfo.photos[0].rover.status}</p>
+          <p className='second_title'>{marsData.photos[0].camera.full_name}</p>
+          <img className="api_img_rover" src={marsData.photos[0].img_src} alt={marsData.photos[0].camera.full_name} />
+          <p className='pic_day'>Image Dated: {marsData.photos[0].earth_date}</p>
+          <p className='api_info'>Status of Rover: {marsData.photos[0].rover.status}</p>
         </div>
       )}
     </>
