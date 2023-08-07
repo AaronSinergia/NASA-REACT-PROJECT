@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 
 export const ApiMars = ({marsData, setMarsData}) => {
 
+  const NASA_API = "https://api.nasa.gov/";
+  const NASA_API_KEY = "Cv26rEXaDRpS2GDm5J2E2qYKXpGWT7O4Tn6YchRu";
+  const MARS_URL = `${NASA_API}mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${NASA_API_KEY}`;
+  
   useEffect(() => {
-    const NASA_API = "https://api.nasa.gov/";
-    const NASA_API_KEY = "Cv26rEXaDRpS2GDm5J2E2qYKXpGWT7O4Tn6YchRu";
-    const MARS_URL = `${NASA_API}mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${NASA_API_KEY}`;
-
     fetch(MARS_URL)
       .then(response => {
         if (!response.ok) {
@@ -21,6 +21,7 @@ export const ApiMars = ({marsData, setMarsData}) => {
         console.error('Fetch error:', error);
       });
   }, []);
+
   return (
     <>
       {marsData  && marsData.photos && marsData.photos.length > 0 &&
