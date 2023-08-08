@@ -1,28 +1,12 @@
 import React, {useEffect} from 'react';
-import { today } from '../components/CurrentDate';
+import { ApiPetition } from '../functions/fetchFunction';
 import SetDate from './SetDate';
 
 export const ApiNasa = ({apiInfo, setApiInfo}) => {
 
-  const NASA_API = "https://api.nasa.gov/";
-  const NASA_API_KEY = "Cv26rEXaDRpS2GDm5J2E2qYKXpGWT7O4Tn6YchRu";
-  const APOD_URL = `${NASA_API}planetary/apod?date=${today}&api_key=${NASA_API_KEY}`;
-  
-  // useEffect(() => {
-  //   fetch(APOD_URL)
-  //     .then(response => {
-  //       if (!response.ok) {
-  //         throw new Error('La consulta realizada no es válida')
-  //       }
-  //       return response.json();
-  //     })
-  //     .then(data => {
-  //       setApiInfo(data); // Guardar la información en el estado
-  //     })
-  //     .catch(error => {
-  //       console.error('Fetch error:', error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    ApiPetition({isMars: false, stateToChange: setApiInfo})
+  }, []);
 
   return (
     <>

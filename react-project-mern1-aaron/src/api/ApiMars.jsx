@@ -1,25 +1,11 @@
 import React, { useEffect } from 'react';
+import { ApiPetition } from '../functions/fetchFunction';
+import SetDate from './SetDate';
 
 export const ApiMars = ({marsData, setMarsData}) => {
 
-  const NASA_API = "https://api.nasa.gov/";
-  const NASA_API_KEY = "Cv26rEXaDRpS2GDm5J2E2qYKXpGWT7O4Tn6YchRu";
-  const MARS_URL = `${NASA_API}mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=${NASA_API_KEY}`;
-  
   useEffect(() => {
-    fetch(MARS_URL)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('La consulta realizada no es válida');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setMarsData(data); // Guardar la información en el estado
-      })
-      .catch(error => {
-        console.error('Fetch error:', error);
-      });
+    ApiPetition({isMars: true, stateToChange: setMarsData})
   }, []);
 
   return (
@@ -35,6 +21,7 @@ export const ApiMars = ({marsData, setMarsData}) => {
           <img className="api_img_rover" src={marsData.photos[0].img_src} alt={marsData.photos[0].camera.full_name} />
           <p className='pic_day'>Image Dated: {marsData.photos[0].earth_date}</p>
           <p className='api_info'>Status of Rover: {marsData.photos[0].rover.status}</p>
+          <SetDate />
         </div>
       )}
     </>
