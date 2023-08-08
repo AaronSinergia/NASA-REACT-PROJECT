@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react';
 import { ApiPetition } from '../functions/fetchFunction';
-import SetDate from './SetDate';
 
 export const ApiNasa = ({apiInfo, setApiInfo}) => {
 
@@ -16,7 +15,6 @@ export const ApiNasa = ({apiInfo, setApiInfo}) => {
           <img className="api_img" src={apiInfo.url} alt={apiInfo.title} />
           <p className='pic_day'>Image Dated: {apiInfo.date}</p>
           <p className='api_info'>{apiInfo.explanation}</p>
-          <SetDate />
         </div>
       )}
     </>
